@@ -31,14 +31,14 @@ import UIKit
         
         let attachment = NSTextAttachment()
         attachment.image = UIImage(named: "account")
-        attachment.bounds = CGRect(x: -20, y: -2, width: 15, height: 15)
+        attachment.bounds = CGRect(x: 0, y: -3, width: 15, height: 15)
         let attributedString = NSMutableAttributedString(string: "")
         attributedString.append(NSAttributedString(attachment: attachment))
         let textAfterIcon = NSMutableAttributedString(string: "  \(username)")
         attributedString.append(textAfterIcon)
         loginUserLabel.textAlignment = .center
         loginUserLabel.attributedText = attributedString
-        loginUserLabel.borderDash(withRadius: 4, borderWidth: 0.4, borderColor: .white, dashSize: 2)
+        loginUserLabel.borderDashLabel(withRadius: 4, borderWidth: 0.4, borderColor: .white, dashSize: 2)
 
     }
     
@@ -46,7 +46,7 @@ import UIKit
     
     
     extension UIView {
-    func borderDash(withRadius cornerRadius: Float, borderWidth: Float, borderColor: UIColor, dashSize: Int) {
+    func borderDashLabel(withRadius cornerRadius: Float, borderWidth: Float, borderColor: UIColor, dashSize: Int) {
         let currentFrame = self.bounds
         let shapeLayer = CAShapeLayer()
         let path = CGMutablePath()
